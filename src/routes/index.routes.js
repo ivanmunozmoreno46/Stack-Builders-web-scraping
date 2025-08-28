@@ -4,7 +4,11 @@ const router = express.Router();
 
 router.use(express.json());
 
-// Usa el método scrape del controlador
+// Route to the scraped info
 router.get("/scrape", controller.scrape);
 
+// Route to the filtered entries
+router.get("/scrape/:filter", controller.filteredEntries);
+
+router.get("/log", controller.usageLog);
 module.exports = router;
